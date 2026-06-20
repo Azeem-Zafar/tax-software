@@ -4,7 +4,7 @@ import "./globals.css";
 import MobileNav from "../app/MobileNav"
 
 export const metadata: Metadata = {
-  title: "Quaid-e-Azam Tax Software",
+  title: "Tax Software",
   description: "Find the right tax product for your situation.",
 };
 
@@ -27,7 +27,7 @@ export default function RootLayout({
         <header className="sticky top-0 z-50 border-b border-[#F2EFE9]/10 bg-[#0B0E14]/80 backdrop-blur-md">
           <nav className="max-w-6xl mx-auto px-6 sm:px-10 h-16 flex items-center justify-between">
             <Link href="/" className="font-bold text-lg tracking-tight">
-              QA<span className="text-[#C9A24B]">Tax</span>
+              <span className="text-[#C9A24B]">Tax</span>
             </Link>
 
             {/* Desktop links */}
