@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import MobileNav from "../app/MobileNav"
 
 export const metadata: Metadata = {
-  title: "Tax Software",
+  title: "Quaid-e-Azam Tax Software",
   description: "Find the right tax product for your situation.",
 };
 
@@ -26,8 +27,10 @@ export default function RootLayout({
         <header className="sticky top-0 z-50 border-b border-[#F2EFE9]/10 bg-[#0B0E14]/80 backdrop-blur-md">
           <nav className="max-w-6xl mx-auto px-6 sm:px-10 h-16 flex items-center justify-between">
             <Link href="/" className="font-bold text-lg tracking-tight">
-              <span className="text-[#C9A24B]">Tax</span>
+              QA<span className="text-[#C9A24B]">Tax</span>
             </Link>
+
+            {/* Desktop links */}
             <div className="hidden sm:flex items-center gap-7 text-sm">
               {NAV_LINKS.map((link) => (
                 <Link
@@ -39,12 +42,17 @@ export default function RootLayout({
                 </Link>
               ))}
             </div>
+
+            {/* Desktop CTA */}
             <Link
               href="/recommend"
-              className="px-4 py-2 rounded-full bg-[#C9A24B] text-[#0B0E14] text-sm font-semibold hover:scale-[1.03] transition-transform"
+              className="hidden sm:inline-block px-4 py-2 rounded-full bg-[#C9A24B] text-[#0B0E14] text-sm font-semibold hover:scale-[1.03] transition-transform"
             >
               Find my product
             </Link>
+
+            {/* Mobile menu (client component) */}
+            <MobileNav navLinks={NAV_LINKS} />
           </nav>
         </header>
         <main>{children}</main>
